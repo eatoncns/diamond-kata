@@ -4,12 +4,7 @@
 using namespace diamond;
 using testing::StrEq;
 
-TEST(EdgesForRowShould, ReturnEmptyStringForRow0)
-{
-    EXPECT_THAT(edgesForRow(0), StrEq(""));
-}
-
 TEST(EdgesForRowShould, ReturnUnseparatedEdgesForRow1)
 {
-    EXPECT_THAT(edgesForRow(1), StrEq("/\\"));
+    EXPECT_THAT(edgesForRow(0), StrEq("/\\"));
 }

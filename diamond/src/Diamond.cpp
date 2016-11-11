@@ -2,12 +2,8 @@
 
 namespace diamond
 {
-    std::string edgesForRow(unsigned int iRow)
+    std::string edgesForRow(unsigned int)
     {
-        if (iRow == 0)
-        {
-            return "";
-        }
         return "/\\";
     }
 }
