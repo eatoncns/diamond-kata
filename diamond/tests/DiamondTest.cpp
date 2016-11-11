@@ -16,3 +16,8 @@ TEST(EdgesForRowShould, ReturnEdgesSeparatedByTwiceTheRowNumberSpaces)
         EXPECT_THAT(edgesForRow(inOutPair.first), StrEq(inOutPair.second));
     }
 }
+
+TEST(CentreWithWidthShould, ReturnInputStringWhenItIsBiggerThanInputWidth)
+{
+    EXPECT_THAT(centreWithWidth(2, "abc"), StrEq("abc"));
+}
