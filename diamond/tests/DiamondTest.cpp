@@ -17,7 +17,7 @@ TEST(EdgesForRowShould, ReturnEdgesSeparatedByTwiceTheRowNumberSpaces)
     }
 }
 
-TEST(CentreWithWidthShould, ReturnInputStringWhenItIsBiggerThanInputWidth)
+TEST(PadEdgesToWidthShould, ReturnUnmodifiedEdgesWhenWidthAlreadyEqual)
 {
-    EXPECT_THAT(centreWithWidth(2, "abc"), StrEq("abc"));
+    EXPECT_THAT(padEdgesToWidth(2, "/\\"), StrEq("/\\"));
 }

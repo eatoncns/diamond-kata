@@ -7,8 +7,8 @@ namespace diamond
         return "/" + std::string(iRow*2, ' ') + "\\";
     }
 
-    std::string centreWithWidth(unsigned int, const std::string& iOriginal)
+    std::string padEdgesToWidth(unsigned int, const std::string& iEdges)
     {
-        return "abc";
+        return "/\\";
     }
 }
