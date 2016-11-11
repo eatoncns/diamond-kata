@@ -8,3 +8,8 @@ TEST(EdgesForRowShould, ReturnUnseparatedEdgesForRow0)
 {
     EXPECT_THAT(edgesForRow(0), StrEq("/\\"));
 }
+
+TEST(EdgesForRowShould, ReturnEdgesSeparatedByTwoSpacesForRow1)
+{
+    EXPECT_THAT(edgesForRow(1), StrEq("/  \\"));
+}
