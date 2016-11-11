@@ -6,7 +6,13 @@ using testing::StrEq;
 
 TEST(EdgesForRowShould, ReturnEdgesSeparatedByTwiceTheRowNumberSpaces)
 {
-    EXPECT_THAT(edgesForRow(0), StrEq("/\\"));
-    EXPECT_THAT(edgesForRow(1), StrEq("/  \\"));
-    EXPECT_THAT(edgesForRow(6), StrEq("/            \\"));
+    std::map<unsigned int, std::string> expectedResults =
+            {{0, "/\\"},
+             {1, "/  \\"},
+             {6, "/            \\"}};
+
+    for (auto inOutPair : expectedResults)
+    {
+        EXPECT_THAT(edgesForRow(inOutPair.first), StrEq(inOutPair.second));
+    }
 }
