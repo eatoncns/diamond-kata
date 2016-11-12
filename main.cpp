@@ -1,7 +1,14 @@
 #include <iostream>
+#include <diamond/Diamond.h>
+
+using namespace std;
+using diamond::diamondCutter;
 
 int main()
 {
-    std::cout << "Diamond here please!" << std::endl;
+    cout << "Enter diamond depth: ";
+    unsigned int depth;
+    cin >> depth;
+    cout << diamondCutter(depth) << endl;
     return 0;
 }
