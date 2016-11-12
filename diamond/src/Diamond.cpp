@@ -60,4 +60,12 @@ namespace diamond
         }
         return mirrorDiamond.str();
     }
+
+
+    std::string diamondCutter(const unsigned int iDepth)
+    {
+        std::string upperHalf = buildUpperDiamond(iDepth);
+        std::string lowerHalf = mirrorDiamondHalf(upperHalf);
+        return upperHalf + lowerHalf;
+    }
 }

@@ -101,3 +101,33 @@ TEST(MirrorDiamondHalfShould, MirrorDepthFiveDiamondHalf)
                       << "    \\/    \n";
     EXPECT_THAT(mirrorDiamondHalf(inputDiamondHalf.str()), StrEq(outputDiamondHalf.str()));
 }
+
+
+TEST(DiamondCutterShould, ReturnDiamondOfDepthOne)
+{
+    std::ostringstream diamond;
+    diamond << "/\\" << "\n"
+            <<"\\/" << "\n";
+    EXPECT_THAT(diamondCutter(1), StrEq(diamond.str()));
+}
+
+TEST(DiamondCutterShould, ReturnDiamondOfDepthFive)
+{
+    std::ostringstream diamond;
+    diamond << "    /\\    \n"
+            << "   /  \\   \n"
+            << "  /    \\  \n"
+            << " /      \\ \n"
+            << "/        \\\n"
+            << "\\        /\n"
+            << " \\      / \n"
+            << "  \\    /  \n"
+            << "   \\  /   \n"
+            << "    \\/    \n";
+    EXPECT_THAT(diamondCutter(5), StrEq(diamond.str()));
+}
+
+TEST(DiamondCutterShould, ReturnEmptyStringForDepthZero)
+{
+    EXPECT_THAT(diamondCutter(0), StrEq(""));
+}

@@ -15,6 +15,8 @@ namespace diamond
     void split(const std::string& iString, const char iDelimeter, std::vector<std::string>& oElems);
 
     std::string mirrorDiamondHalf(const std::string& iDiamondHalf);
+
+    std::string diamondCutter(const unsigned int iDepth);
 }
 
 #endif //CMAKE_PROJECT_DIAMOND_H
