@@ -62,3 +62,9 @@ TEST(BuildUpperDiamondShould, BuildDepthFiveUpperDiamond)
                     << "/        \\\n";
     EXPECT_THAT(buildUpperDiamond(5), StrEq(expectedDiamond.str()));
 }
+
+
+TEST(MirrorDiamondHalfShould, MirrorLevelOneDiamond)
+{
+    EXPECT_THAT(mirrorDiamondHalf("/\\\n"), StrEq("\\/\n"));
+}

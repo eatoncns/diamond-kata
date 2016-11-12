@@ -1,6 +1,7 @@
 #include <diamond/Diamond.h>
 #include <assert.h>
 #include <sstream>
+#include <algorithm>
 
 namespace diamond
 {
@@ -8,6 +9,7 @@ namespace diamond
     {
         return "/" + std::string(iRow*2, ' ') + "\\";
     }
+
 
     std::string padEdgesToWidth(unsigned int iWidth, const std::string& iEdges)
     {
@@ -21,6 +23,7 @@ namespace diamond
         return std::string(paddingNum, ' ') + iEdges + std::string(paddingNum, ' ');
     }
 
+
     std::string buildUpperDiamond(unsigned int iDepth)
     {
         std::ostringstream upperDiamond;
@@ -31,5 +34,11 @@ namespace diamond
                          << "\n";
         }
         return upperDiamond.str();
+    }
+
+
+    std::string mirrorDiamondHalf(const std::string& iDiamondHalf)
+    {
+        return "\\/\n";
     }
 }
