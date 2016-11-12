@@ -11,6 +11,7 @@ namespace diamond
     std::string padEdgesToWidth(unsigned int iWidth, const std::string& iEdges)
     {
         const int remainingSpace = iWidth - iEdges.length();
+        assert(remainingSpace%2 == 0);
         if (remainingSpace <= 0)
         {
             return iEdges;
