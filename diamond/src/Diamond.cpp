@@ -7,8 +7,10 @@ namespace diamond
         return "/" + std::string(iRow*2, ' ') + "\\";
     }
 
-    std::string padEdgesToWidth(unsigned int, const std::string& iEdges)
+    std::string padEdgesToWidth(unsigned int iWidth, const std::string& iEdges)
     {
-        return "/\\";
+        const int remainingSpace = iWidth - iEdges.length();
+        const int paddingNum = remainingSpace / 2;
+        return std::string(paddingNum, ' ') + "/\\" + std::string(paddingNum, ' ');
     }
 }

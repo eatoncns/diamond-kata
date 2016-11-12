@@ -4,7 +4,7 @@
 using namespace diamond;
 using testing::StrEq;
 
-TEST(EdgesForRowShould, ReturnEdgesSeparatedByTwiceTheRowNumberSpaces)
+TEST(EdgesForRowShould, ReturnEdgeCharactersSeparatedByTwiceTheRowNumberSpaces)
 {
     std::map<unsigned int, std::string> expectedResults =
             {{0, "/\\"},
@@ -20,4 +20,9 @@ TEST(EdgesForRowShould, ReturnEdgesSeparatedByTwiceTheRowNumberSpaces)
 TEST(PadEdgesToWidthShould, ReturnUnmodifiedEdgesWhenWidthAlreadyEqual)
 {
     EXPECT_THAT(padEdgesToWidth(2, "/\\"), StrEq("/\\"));
+}
+
+TEST(PadEdgesToWidthShould, PadTopLevelEdgesWithEqualSpacingOnEachSide)
+{
+    EXPECT_THAT(padEdgesToWidth(4, "/\\"), StrEq(" /\\ "));
 }
