@@ -1,5 +1,5 @@
 # Build diamond
-add_library(diamond src/Diamond.cpp)
+add_library(diamond src/Diamond.cpp src/StringUtils.cpp)
 
 # Make include directory available
 target_include_directories(diamond PUBLIC include)
@@ -24,7 +24,7 @@ add_subdirectory(${CMAKE_BINARY_DIR}/googletest-src
         ${CMAKE_BINARY_DIR}/googletest-build)
 
 # Build test executable
-add_executable(diamondtest tests/DiamondTest.cpp)
+add_executable(diamondtest tests/DiamondTest.cpp tests/StringUtilsTest.cpp)
 
 # Give tests access to diamond internals
 target_include_directories(diamondtest PRIVATE src)

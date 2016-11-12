@@ -3,7 +3,6 @@
 
 using namespace diamond;
 using testing::StrEq;
-using testing::ElementsAre;
 
 TEST(EdgesForRowShould, ReturnEdgeCharactersSeparatedByTwiceTheRowNumberSpaces)
 {
@@ -62,21 +61,6 @@ TEST(BuildUpperDiamondShould, BuildDepthFiveUpperDiamond)
                     << " /      \\ \n"
                     << "/        \\\n";
     EXPECT_THAT(buildUpperDiamond(5), StrEq(expectedDiamond.str()));
-}
-
-
-TEST(SplitShould, AddInputStringToElemsWhenDelimeterNotPresent)
-{
-    std::vector<std::string> elems;
-    split("Hello World!", '\n', elems);
-    EXPECT_THAT(elems, ElementsAre("Hello World!"));
-}
-
-TEST(SplitShould, PopulateElemsWithSubstringsSeparatedByDelimiter)
-{
-    std::vector<std::string> elems;
-    split("Oh no.\nNot again!\n", '\n', elems);
-    EXPECT_THAT(elems, ElementsAre("Oh no.", "Not again!"));
 }
 
 
