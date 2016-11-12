@@ -65,11 +65,18 @@ TEST(BuildUpperDiamondShould, BuildDepthFiveUpperDiamond)
 }
 
 
-TEST(SplitShould, AddInputStringToVectorWhenDelimeterNotPresent)
+TEST(SplitShould, AddInputStringToElemsWhenDelimeterNotPresent)
 {
     std::vector<std::string> elems;
-    split("Hello", ' ', elems);
-    EXPECT_THAT(elems, ElementsAre("Hello"));
+    split("Hello World!", '\n', elems);
+    EXPECT_THAT(elems, ElementsAre("Hello World!"));
+}
+
+TEST(SplitShould, PopulateElemsWithSubstringsSeparatedByDelimiter)
+{
+    std::vector<std::string> elems;
+    split("Oh no.\nNot again!\n", '\n', elems);
+    EXPECT_THAT(elems, ElementsAre("Oh no.", "Not again!"));
 }
 
 
@@ -78,7 +85,7 @@ TEST(MirrorDiamondHalfShould, MirrorLevelOneDiamond)
     EXPECT_THAT(mirrorDiamondHalf("/\\\n"), StrEq("\\/\n"));
 }
 
-//TEST(MirrotDiamondHalfShould, MirrorLowerLevelDiamondHalf)
+//TEST(MirrorDiamondHalfShould, MirrorLowerLevelDiamondHalf)
 //{
 //    EXPECT_THAT(mirrorDiamondHalf("  /  \\  \n"), StrEq("  \\  /  \n"));
 //}
