@@ -17,6 +17,7 @@ TEST(EdgesForRowShould, ReturnEdgeCharactersSeparatedByTwiceTheRowNumberSpaces)
     }
 }
 
+
 TEST(PadEdgesToWidthShould, ReturnUnmodifiedEdgesWhenWidthAlreadyEqualToInput)
 {
     EXPECT_THAT(padEdgesToWidth(2, "/\\"), StrEq("/\\"));
@@ -35,4 +36,10 @@ TEST(PadEdgesToWidthShould, PadTopLevelEdgesWithEqualSpacingOnEachSide)
 TEST(PadEdgesToWidthShould, PadLevelOneEdgesWithEqualSpacingOnEachSide)
 {
     EXPECT_THAT(padEdgesToWidth(8, "/  \\"), StrEq("  /  \\  "));
+}
+
+
+TEST(BuildUpperDiamondShould, BuildDepthOneUpperDiamond)
+{
+    EXPECT_THAT(buildUpperDiamond(1), StrEq("/\\\n"));
 }

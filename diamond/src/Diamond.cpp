@@ -19,4 +19,9 @@ namespace diamond
         const int paddingNum = remainingSpace / 2;
         return std::string(paddingNum, ' ') + iEdges + std::string(paddingNum, ' ');
     }
+
+    std::string buildUpperDiamond(unsigned int)
+    {
+        return "/\\\n";
+    }
 }
