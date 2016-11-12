@@ -37,8 +37,18 @@ namespace diamond
     }
 
 
+
+
     std::string mirrorDiamondHalf(const std::string& iDiamondHalf)
     {
+        std::vector<std::string> rows;
+        split(iDiamondHalf, '\n', rows);
         return "\\/\n";
+    }
+
+
+    void split(const std::string& iString, const char iDelimeter, std::vector<std::string>& oElems)
+    {
+        oElems.push_back(iString);
     }
 }

@@ -2,6 +2,7 @@
 #define CMAKE_PROJECT_DIAMOND_H
 
 #include <string>
+#include <vector>
 
 namespace diamond
 {
@@ -12,6 +13,8 @@ namespace diamond
     std::string buildUpperDiamond(unsigned int iDepth);
 
     std::string mirrorDiamondHalf(const std::string& iDiamondHalf);
+
+    void split(const std::string& iString, const char iDelimeter, std::vector<std::string>& oElems);
 }
 
 #endif //CMAKE_PROJECT_DIAMOND_H

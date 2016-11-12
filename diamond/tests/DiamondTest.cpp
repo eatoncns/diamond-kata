@@ -3,6 +3,7 @@
 
 using namespace diamond;
 using testing::StrEq;
+using testing::ElementsAre;
 
 TEST(EdgesForRowShould, ReturnEdgeCharactersSeparatedByTwiceTheRowNumberSpaces)
 {
@@ -64,7 +65,20 @@ TEST(BuildUpperDiamondShould, BuildDepthFiveUpperDiamond)
 }
 
 
+TEST(SplitShould, AddInputStringToVectorWhenDelimeterNotPresent)
+{
+    std::vector<std::string> elems;
+    split("Hello", ' ', elems);
+    EXPECT_THAT(elems, ElementsAre("Hello"));
+}
+
+
 TEST(MirrorDiamondHalfShould, MirrorLevelOneDiamond)
 {
     EXPECT_THAT(mirrorDiamondHalf("/\\\n"), StrEq("\\/\n"));
 }
+
+//TEST(MirrotDiamondHalfShould, MirrorLowerLevelDiamondHalf)
+//{
+//    EXPECT_THAT(mirrorDiamondHalf("  /  \\  \n"), StrEq("  \\  /  \n"));
+//}
