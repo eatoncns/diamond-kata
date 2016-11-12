@@ -1,5 +1,6 @@
 #include <diamond/Diamond.h>
 #include <assert.h>
+#include <sstream>
 
 namespace diamond
 {
@@ -20,8 +21,15 @@ namespace diamond
         return std::string(paddingNum, ' ') + iEdges + std::string(paddingNum, ' ');
     }
 
-    std::string buildUpperDiamond(unsigned int)
+    std::string buildUpperDiamond(unsigned int iDepth)
     {
-        return "/\\\n";
+        std::ostringstream upperDiamond;
+        const unsigned int rowWidth = iDepth*2;
+        for (unsigned int row = 0; row < iDepth; ++row)
+        {
+            upperDiamond << padEdgesToWidth(rowWidth, edgesForRow(row))
+                         << "\n";
+        }
+        return upperDiamond.str();
     }
 }

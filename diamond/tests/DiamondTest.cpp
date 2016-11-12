@@ -43,3 +43,22 @@ TEST(BuildUpperDiamondShould, BuildDepthOneUpperDiamond)
 {
     EXPECT_THAT(buildUpperDiamond(1), StrEq("/\\\n"));
 }
+
+TEST(BuildUpperDiamondShould, BuildDepthTwoUpperDiamond)
+{
+    std::ostringstream expectedDiamond;
+    expectedDiamond << " /\\ \n"
+                    << "/  \\\n";
+    EXPECT_THAT(buildUpperDiamond(2), StrEq(expectedDiamond.str()));
+}
+
+TEST(BuildUpperDiamondShould, BuildDepthFiveUpperDiamond)
+{
+    std::ostringstream expectedDiamond;
+    expectedDiamond << "    /\\    \n"
+                    << "   /  \\   \n"
+                    << "  /    \\  \n"
+                    << " /      \\ \n"
+                    << "/        \\\n";
+    EXPECT_THAT(buildUpperDiamond(5), StrEq(expectedDiamond.str()));
+}
