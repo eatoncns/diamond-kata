@@ -1,4 +1,5 @@
 #include <diamond/Diamond.h>
+#include <assert.h>
 
 namespace diamond
 {
@@ -10,6 +11,10 @@ namespace diamond
     std::string padEdgesToWidth(unsigned int iWidth, const std::string& iEdges)
     {
         const int remainingSpace = iWidth - iEdges.length();
+        if (remainingSpace <= 0)
+        {
+            return iEdges;
+        }
         const int paddingNum = remainingSpace / 2;
         return std::string(paddingNum, ' ') + iEdges + std::string(paddingNum, ' ');
     }

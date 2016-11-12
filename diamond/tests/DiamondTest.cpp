@@ -17,9 +17,14 @@ TEST(EdgesForRowShould, ReturnEdgeCharactersSeparatedByTwiceTheRowNumberSpaces)
     }
 }
 
-TEST(PadEdgesToWidthShould, ReturnUnmodifiedEdgesWhenWidthAlreadyEqual)
+TEST(PadEdgesToWidthShould, ReturnUnmodifiedEdgesWhenWidthAlreadyEqualToInput)
 {
     EXPECT_THAT(padEdgesToWidth(2, "/\\"), StrEq("/\\"));
+}
+
+TEST(PadEdgesToWidthShould, ReturnUnmodifiedEdgesWhenWidthAlreadyMoreThanInput)
+{
+    EXPECT_THAT(padEdgesToWidth(2, "/  \\"), StrEq("/  \\"));
 }
 
 TEST(PadEdgesToWidthShould, PadTopLevelEdgesWithEqualSpacingOnEachSide)
