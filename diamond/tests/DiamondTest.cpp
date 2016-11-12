@@ -80,12 +80,24 @@ TEST(SplitShould, PopulateElemsWithSubstringsSeparatedByDelimiter)
 }
 
 
-TEST(MirrorDiamondHalfShould, MirrorLevelOneDiamond)
+TEST(MirrorDiamondHalfShould, MirrorDepthOneDiamondHalf)
 {
     EXPECT_THAT(mirrorDiamondHalf("/\\\n"), StrEq("\\/\n"));
 }
 
-//TEST(MirrorDiamondHalfShould, MirrorLowerLevelDiamondHalf)
-//{
-//    EXPECT_THAT(mirrorDiamondHalf("  /  \\  \n"), StrEq("  \\  /  \n"));
-//}
+TEST(MirrorDiamondHalfShould, MirrorDepthFiveDiamondHalf)
+{
+    std::ostringstream inputDiamondHalf;
+    inputDiamondHalf << "    /\\    \n"
+                     << "   /  \\   \n"
+                     << "  /    \\  \n"
+                     << " /      \\ \n"
+                     << "/        \\\n";
+    std::ostringstream outputDiamondHalf;
+    outputDiamondHalf << "\\        /\n"
+                      << " \\      / \n"
+                      << "  \\    /  \n"
+                      << "   \\  /   \n"
+                      << "    \\/    \n";
+    EXPECT_THAT(mirrorDiamondHalf(inputDiamondHalf.str()), StrEq(outputDiamondHalf.str()));
+}

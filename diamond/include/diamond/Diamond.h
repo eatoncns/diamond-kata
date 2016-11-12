@@ -12,9 +12,9 @@ namespace diamond
 
     std::string buildUpperDiamond(unsigned int iDepth);
 
-    std::string mirrorDiamondHalf(const std::string& iDiamondHalf);
-
     void split(const std::string& iString, const char iDelimeter, std::vector<std::string>& oElems);
+
+    std::string mirrorDiamondHalf(const std::string& iDiamondHalf);
 }
 
 #endif //CMAKE_PROJECT_DIAMOND_H
