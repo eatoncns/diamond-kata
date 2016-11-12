@@ -26,3 +26,8 @@ TEST(PadEdgesToWidthShould, PadTopLevelEdgesWithEqualSpacingOnEachSide)
 {
     EXPECT_THAT(padEdgesToWidth(4, "/\\"), StrEq(" /\\ "));
 }
+
+TEST(PadEdgesToWidthShould, PadLevelOneEdgesWithEqualSpacingOnEachSide)
+{
+    EXPECT_THAT(padEdgesToWidth(8, "/  \\"), StrEq("  /  \\  "));
+}

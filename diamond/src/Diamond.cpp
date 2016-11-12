@@ -11,6 +11,6 @@ namespace diamond
     {
         const int remainingSpace = iWidth - iEdges.length();
         const int paddingNum = remainingSpace / 2;
-        return std::string(paddingNum, ' ') + "/\\" + std::string(paddingNum, ' ');
+        return std::string(paddingNum, ' ') + iEdges + std::string(paddingNum, ' ');
     }
 }
