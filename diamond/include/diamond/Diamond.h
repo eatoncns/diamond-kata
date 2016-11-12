@@ -6,7 +6,7 @@
 
 namespace diamond
 {
-    std::string diamondCutter(const unsigned int iDepth);
+    std::string buildDiamond(const unsigned int iDepth);
 }
 
 #endif //CMAKE_PROJECT_DIAMOND_H

@@ -4,7 +4,7 @@
 
 namespace diamond
 {
-    std::string diamondCutter(const unsigned int iDepth)
+    std::string buildDiamond(const unsigned int iDepth)
     {
         std::string upperHalf = buildUpperDiamond(iDepth);
         std::string lowerHalf = mirrorDiamondHalf(upperHalf);

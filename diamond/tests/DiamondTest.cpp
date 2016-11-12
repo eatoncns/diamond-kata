@@ -4,15 +4,15 @@
 using namespace diamond;
 using testing::StrEq;
 
-TEST(DiamondCutterShould, ReturnDiamondOfDepthOne)
+TEST(BuildDiamondShould, ReturnDiamondOfDepthOne)
 {
     std::ostringstream diamond;
     diamond << "/\\" << "\n"
             <<"\\/" << "\n";
-    EXPECT_THAT(diamondCutter(1), StrEq(diamond.str()));
+    EXPECT_THAT(buildDiamond(1), StrEq(diamond.str()));
 }
 
-TEST(DiamondCutterShould, ReturnDiamondOfDepthFive)
+TEST(BuildDiamondShould, ReturnDiamondOfDepthFive)
 {
     std::ostringstream diamond;
     diamond << "    /\\    \n"
@@ -25,10 +25,10 @@ TEST(DiamondCutterShould, ReturnDiamondOfDepthFive)
             << "  \\    /  \n"
             << "   \\  /   \n"
             << "    \\/    \n";
-    EXPECT_THAT(diamondCutter(5), StrEq(diamond.str()));
+    EXPECT_THAT(buildDiamond(5), StrEq(diamond.str()));
 }
 
-TEST(DiamondCutterShould, ReturnEmptyStringForDepthZero)
+TEST(BuildDiamondShould, ReturnEmptyStringForDepthZero)
 {
-    EXPECT_THAT(diamondCutter(0), StrEq(""));
+    EXPECT_THAT(buildDiamond(0), StrEq(""));
 }
